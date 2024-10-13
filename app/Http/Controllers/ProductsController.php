@@ -62,7 +62,7 @@ class ProductsController extends Controller
             $products->save();
             return response()->json('Product added successfully', 201);
         } catch (Exception $e) {
-            return response()->json(['error' => 'An error occurred while adding the product'], 500);
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
